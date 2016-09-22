@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>main.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>main.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <p>Create IE + others compatible event handler (from <a href="https://davidwalsh.name/window-iframe">https://davidwalsh.name/window-iframe</a>)</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> eventMethod = <span class="hljs-built_in">window</span>.addEventListener ? <span class="hljs-string">"addEventListener"</span> : <span class="hljs-string">"attachEvent"</span>;
+<span class="hljs-keyword">var</span> eventer = <span class="hljs-built_in">window</span>[eventMethod];
+<span class="hljs-keyword">var</span> messageEvent = eventMethod == <span class="hljs-string">"attachEvent"</span> ? <span class="hljs-string">"onmessage"</span> : <span class="hljs-string">"message"</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>Listen to message from child window</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>eventer(messageEvent,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+  <span class="hljs-keyword">var</span> label = $(<span class="hljs-string">'#application-status'</span>);
+  <span class="hljs-keyword">var</span> message = e.data ? <span class="hljs-string">'Approved'</span> : <span class="hljs-string">'Denied'</span>;
+
+  label.removeClass(<span class="hljs-string">'label-warning'</span>);
+  label.html(message);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Change application status based on Nova response</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">if</span> (e.data) {
+    label.addClass(<span class="hljs-string">'label-success'</span>);
+  } <span class="hljs-keyword">else</span> {
+    label.addClass(<span class="hljs-string">'label-danger'</span>);
+  }
+}, <span class="hljs-literal">false</span>);</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

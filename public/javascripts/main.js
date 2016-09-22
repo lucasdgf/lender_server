@@ -10,7 +10,7 @@ eventer(messageEvent,function(e) {
 
   label.removeClass('label-warning');
   label.html(message);
-  // Success
+  // Change application status based on Nova response
   if (e.data) {
     label.addClass('label-success');
   } else {
