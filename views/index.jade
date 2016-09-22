@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  #application-header
+    h2 Credit Status
+    #application-status.label.label-warning Pending
+  iframe#nova-form(src='https://localhost:3000/api/widget')
+
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+  script(src='/javascripts/main.js')

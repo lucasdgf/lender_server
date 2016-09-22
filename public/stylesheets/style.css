@@ -1,0 +1,28 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+#application-header {
+  height: 120px;
+  margin: 20px 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 100;
+}
+
+#application-status {
+  font-size: 20px;
+  position: relative;
+  top: 10px;
+}
+
+iframe#nova-form {
+  border-width: 0px;
+  bottom: 0px; 
+  height: calc(100% - 120px);
+  left: 0px;
+  position: absolute;
+  right: 0px;
+  width: 100%;
+}
