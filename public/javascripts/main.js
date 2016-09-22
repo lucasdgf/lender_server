@@ -16,4 +16,4 @@ eventer(messageEvent,function(e) {
   } else {
     label.addClass('label-danger');
   }
-},false);
+}, false);

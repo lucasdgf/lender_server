@@ -1,6 +1,7 @@
 {
-  "name": "lender_server",
-  "version": "0.0.0",
+  "name": "lender-server",
+  "description": "Sample lender server that uses Nova widget",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
